@@ -9,9 +9,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const { choices } = require("yargs");
 
-const team = [];
+let team = [];
 
 function createMgmt (){
     return inquirer.prompt([
@@ -48,6 +47,7 @@ function createMgmt (){
             const manager = new Manager(response.name, response.id, response.email, response.office);
             team.push(manager);
             console.log(manager);
+            CreateEmployee();
         });
 
     }else{
@@ -57,6 +57,10 @@ function createMgmt (){
 });
 
 
+}
+
+function CreateEmployee(){
+    
 }
 
 
