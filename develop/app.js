@@ -74,7 +74,11 @@ function createEmployee(){
             createIntern();
         }else{
             console.log("Stopped creating new employee.");
-            render(team);
+            console.log(team);
+            const html = render (team);
+            fs.writeFile(outputPath, html, function(err){
+                if (err) throw err;
+            });
         }
     });
 }
